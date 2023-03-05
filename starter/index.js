@@ -125,25 +125,56 @@ calculateAverageChangeInProfit();
 
 console.log("Avg of changes: " + averageChange);
 
-//* The greatest increase in Profit/Losses (date and amount) over the entire period. The loop go through each row in the array and calculates the difference between the current element's profit and the previous element's profit. If this change is greater than the current greatest increase in profit, it updates the value of the greatest increase variable.
-// The console log - shows the month and amount of the greatest increase in profit
+//* The greatest increase in Profit/Losses (date and amount) over the entire period.
+
+//Initialize variables to store the greatest decrease and corresponding month//
 
 let greatestIncrease = ["", 0];
+
+// Loop through the finances array and Calculate the difference between the current month and the previous month//
+
 for (let index = 1; index < finances.length; index++) {
   let thisMonth = finances[index];
   let Monthbefore = finances[index - 1];
   let increase = thisMonth[1] - Monthbefore[1];
+
+  //If the difference is more than the current greatest increase, update the variables//
 
   if (increase > greatestIncrease[1]) {
     greatestIncrease[0] = thisMonth[0];
     greatestIncrease[1] = increase;
   }
 }
-
+// Result//
 console.log(
   "Greatest increase in Profits/Losses: ",
   greatestIncrease[0],
   greatestIncrease[1]
 );
 
-//** The greatest decrease in Profit/Losses (date and amount) over the entire period.//
+//* The greatest decrease in Profit/Losses (date and amount) over the entire period.//
+
+//Initialize variables to store the greatest decrease and corresponding month//
+let greatestDecrease = ["", 0];
+
+// Loop through the finances array and Calculate the difference between the current month and the previous month//
+
+for (let index = 1; index < finances.length; index++) {
+  let thisMonth = finances[index];
+  let Monthbefore = finances[index - 1];
+  let increase = thisMonth[1] - Monthbefore[1];
+
+  //If the difference is less than the current greatest decrease, update the variables//
+
+  if (increase < greatestDecrease[1]) {
+    greatestDecrease[0] = thisMonth[0];
+    greatestDecrease[1] = increase;
+  }
+
+  // Result//
+}
+console.log(
+  "Greatest decrease in Profit/Loses: ",
+  greatestDecrease[0],
+  greatestDecrease[1]
+);
