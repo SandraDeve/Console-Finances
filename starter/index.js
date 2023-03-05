@@ -89,3 +89,21 @@ var finances = [
 
 //the total number of months included in the dataset//
 console.log("Total number of months:" + finances.length);
+
+// the net total amount of Profit/Loses over the entire period//
+
+// initialised the ProfitLosses variable with a value of 0
+var ProfitLoses = 0;
+
+//  creation of a loop to iterate through the finances array and add all of the profits/losses
+for (let index = 0; index < finances.length; index++) {
+  ProfitLoses = ProfitLoses + finances[index][1];
+}
+
+console.log("Total number of profit and loses: " + ProfitLoses);
+
+//* The average of the **changes** in Profit/Losses over the entire period.You will need to track what the total change in Profit/Losses are from month to month and then find the average.//
+
+//* The greatest increase in Profit/Losses (date and amount) over the entire period.//
+
+//** The greatest decrease in Profit/Losses (date and amount) over the entire period.//
