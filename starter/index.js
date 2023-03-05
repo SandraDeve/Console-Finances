@@ -104,7 +104,7 @@ console.log("Total number of profit and loses: " + ProfitLoses);
 
 //* The average of the **changes** in Profit/Losses over the entire period.You will need to track what the total change in Profit/Losses are from month to month and then find the average.//
 
-//This loop go through each row in the array and calculates the difference between the current element's profit and the previous element's profit. It then adds up all the differences and divides by the total number of elements in the array minus one to get the average change in profit. //
+//The loop go through each row in the array and calculates the difference between the current element's profit and the previous element's profit. It then adds up all the differences and divides by the total number of elements in the array minus one to get the average change in profit. //
 
 var sumOfChanges = 0;
 var averageChange = 0;
@@ -125,6 +125,25 @@ calculateAverageChangeInProfit();
 
 console.log("Avg of changes: " + averageChange);
 
-//* The greatest increase in Profit/Losses (date and amount) over the entire period.//
+//* The greatest increase in Profit/Losses (date and amount) over the entire period. The loop go through each row in the array and calculates the difference between the current element's profit and the previous element's profit. If this change is greater than the current greatest increase in profit, it updates the value of the greatest increase variable.
+// The console log - shows the month and amount of the greatest increase in profit
+
+let greatestIncrease = ["", 0];
+for (let index = 1; index < finances.length; index++) {
+  let thisMonth = finances[index];
+  let Monthbefore = finances[index - 1];
+  let increase = thisMonth[1] - Monthbefore[1];
+
+  if (increase > greatestIncrease[1]) {
+    greatestIncrease[0] = thisMonth[0];
+    greatestIncrease[1] = increase;
+  }
+}
+
+console.log(
+  "Greatest increase in Profits/Losses: ",
+  greatestIncrease[0],
+  greatestIncrease[1]
+);
 
 //** The greatest decrease in Profit/Losses (date and amount) over the entire period.//
