@@ -2,7 +2,7 @@
 
 # Overview
 
-The main purpose of this project is creating code for analyzing the financial records of a company. I have been provided with a financial dataset in the `starter/index.js` file.
+The main purpose of this project is creating code for analyzing the financial records of a company. I have been provided with a financial dataset in the `starter/index.js` file. I had tutoring session regarding loops and iteration and used https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration as a quide.
 
 # Description
 
